@@ -1,0 +1,91 @@
+$sidebar-bg-color: #282A36;
+$sidebar-color: #FFFFFF;
+$active-channel-color: #8BE9FD;
+$active-channel-bg-color: #44475A;
+$channel-hover-color: #6272A4;
+$online-color: #50FA7B;
+
+.navigate-sidebar {
+  @include flex(1);
+  background-color: $sidebar-bg-color;
+  color: $sidebar-color;
+  overflow: auto;
+
+  .channel-nav {
+    color: $sidebar-color;
+    opacity: 0.6;
+  }
+}
+
+.sidebar-main {
+  padding: 2rem 0rem;
+
+  .sidebar-item {
+    padding: 0.2rem 1rem;
+    color: $sidebar-color;
+  }
+}
+
+.header-item {
+  margin: 0.2rem 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  span {
+    opacity: 0.6;
+  }
+  .new-button {
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+.channel-nav {
+  .prefix-icon {
+    margin-right: 0.5rem;
+    color: darken($sidebar-color, 40%);
+  }
+  .channel-link {
+    display: block;
+    text-decoration: none;
+    border-radius: 2px;
+    &:hover {
+      background-color: $channel-hover-color;
+    }
+  }
+}
+.channel-nav.-active {
+  opacity: 1;
+  .channel-link {
+    background-color: $active-channel-bg-color;
+    color: $active-channel-color;
+  }
+  .prefix-icon {
+    color: $active-channel-color;
+  }
+  .presence-icon.-online {
+    color: $active-channel-color !important;
+  }
+}
+
+.newchannel-button {
+  a {
+    border-bottom: 1px dotted;
+    opacity: 0.6;
+    color: $sidebar-color;
+    &:hover {
+      color: $sidebar-color;
+      text-decoration: none;
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+.presence-icon {
+  font-size: 1.1rem;
+  &.-online {
+    color: $online-color;
+  }
+}
